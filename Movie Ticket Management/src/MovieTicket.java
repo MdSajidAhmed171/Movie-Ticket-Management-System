@@ -81,7 +81,7 @@ public class MovieTicket extends JFrame
 		PPanel2 = new JPanel(null);
 		PPanel2.setPreferredSize(new Dimension(320,160));
 
-		LPassengerDetails=new JLabel("<html><b><font color=\"#C71585\">PassengerDetails</font></b></html>");
+		LPassengerDetails=new JLabel("<html><b><font color=\"#C71585\">Audience Details</font></b></html>");
 
 		LAdult = new JLabel("Adults(12+)");
 
@@ -254,7 +254,7 @@ class button2 implements ActionListener
 
 		iSeatCount = iSeatCount + iAdult + iChildren + iInfant;
 
-		if(iSeatCount > 100)
+		if(iSeatCount > 60)
 		{
 			JOptionPane.showMessageDialog(null,"Seats are full. Sorry!");
 		}
@@ -273,7 +273,7 @@ class button2 implements ActionListener
 				{
 					Save1 temp1=new Save1(sTempHall[i], sTempMovie[i], sTempClass[i], iTempAdult[i], iTempChildren[i], iTempInfant[i], sTempBookingDate[i], iTempPrice[i], sTempTime[i]);
 					OOS1.writeObject(temp1);
-					System.out.println(temp1);
+System.out.println(temp1);
 				}
 				OOS1.writeObject(save2);
 				OOS1.close();
@@ -290,7 +290,7 @@ class button2 implements ActionListener
 }
 
 
-class Save1 implements Serializable // To serialize an object means to convert its state to a byte stream so that the byte stream can be reverted back into a copy of the object
+class Save1 implements Serializable
 {
 	String sHall, sMovie, sClass, sBookingDate, sTime;
 	Integer iPrice, iAdult, iChildren, iInfant;
@@ -306,9 +306,10 @@ class Save1 implements Serializable // To serialize an object means to convert i
 		this.sBookingDate=sBookingDate;
 		this.iPrice=iPrice;
 		this.sTime=sTime;
+
 	}
 	public String toString()
 	{
-		return sMovie+" "+sMovie+" "+sClass+" "+iAdult+" "+iChildren+" "+iInfant+" "+sBookingDate+" "+iPrice+" "+sTime;
+		return sHall+" "+sMovie+" "+sClass+" "+iAdult+" "+iChildren+" "+iInfant+" "+sBookingDate+" "+iPrice+" "+sTime;
 	}
 }
