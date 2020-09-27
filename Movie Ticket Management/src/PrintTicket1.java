@@ -1,6 +1,7 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.*; // import the packages which has inbuild classes so that you can build you GUI project
+import java.awt.*; // package is made known to the current class
+import java.awt.event.*; // Provides interfaces and classes for dealing with different types of events fired by AWT components. 
+import java.util.Random; // for random number
 
 public class PrintTicket1 extends JFrame
 {
@@ -13,12 +14,16 @@ public class PrintTicket1 extends JFrame
 		JPanel Panel2 = new JPanel(null);
 
 		Panel2.setPreferredSize(new Dimension(500,200));
+		
+		Random rand = new Random(); // call random class object
+		
+		int rand_int1 = rand.nextInt(100);
 
 		JLabel LTitle = new JLabel("<html><b><font color=\"#C71585\",size=\"7\">Movie Ticket</font></b></html>");
-		JLabel LFrom = new JLabel("<html><b><font color=\"#000000\">Hall Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;</font></b><font color=\"#778899\">"+ sHall+"</font></html>" );
-		JLabel LTo = new JLabel("<html><font color=\"#000000\">Movie Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;</font><font color=\"#778899\">"+sMovie+"</font></html>");
+		JLabel LHall = new JLabel("<html><b><font color=\"#000000\">Hall Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;</font></b><font color=\"#778899\">"+ sHall+"</font></html>" );
+		JLabel LMovie = new JLabel("<html><font color=\"#000000\">Movie Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;</font><font color=\"#778899\">"+sMovie+"</font></html>");
 		JLabel LClass = new JLabel("<html><font color=\"#000000\">Class &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;</font><font color=\"#778899\">"+sClass+"</font></html>" );
-		JLabel LBookingDate = new JLabel("<html><font color=\"#000000\">Traveling Date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:&nbsp;</font><font color=\"#778899\">"+ sBookingDate+"</font></html>" );
+		JLabel LBookingDate = new JLabel("<html><font color=\"#000000\">Booking Date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:&nbsp;</font><font color=\"#778899\">"+ sBookingDate+"</font></html>" );
 		JLabel LPrice = new JLabel("<html><font color=\"#000000\">Total Price &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:&nbsp;</font><font color=\"#778899\">"+ iPrice+"</font></html>" );
 		JLabel LTime = new JLabel("<html><font color=\"#000000\">Watching Time  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:&nbsp;</font><font color=\"#778899\">"+ sTime+"</font></html>" );
 		JLabel LAdult = new JLabel("<html><font color=\"#000000\">Adult &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;: &nbsp;</font><font color=\"#778899\">"+iAdult+"</font></html>" );
@@ -26,8 +31,8 @@ public class PrintTicket1 extends JFrame
 		JLabel LInfant = new JLabel("<html><font color=\"#000000\">Infant &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;</font><font color=\"#778899\">"+iInfant+"</font></html>" );
 		JLabel LWishes = new JLabel("<html><body><I><font color=\"#D2B48C\">Wish you a happy journy</font></I></body></html>");
 
-		JLabel LTicketNo=new JLabel("<html><font color=\"#000000\">TicketNumber &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;</font> admin </html>");
-		JLabel LBookedBy=new JLabel("<html><font color=\"#000000\">BookedBy &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;</font> </html>");
+		JLabel LTicketNo=new JLabel("<html><font color=\"#000000\">TicketNumber &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;</font>" + rand_int1 + "</html>");
+		JLabel LBookedBy=new JLabel("<html><font color=\"#000000\">BookedBy &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;</font> admin </html>");
 
 		JLabel LEmpty = new JLabel("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 		JLabel LDemo = new JLabel("<html><U><font color=\"#8FBC8F\">Movie-Project Developed By</font></U></html>");
@@ -39,9 +44,9 @@ public class PrintTicket1 extends JFrame
 
 
 		LTitle.setBounds(170,15,500,45);
-		LFrom.setBounds(20,80,300,20);
+		LHall.setBounds(20,80,300,20);
 
-		LTo.setBounds(20,125,300,20);
+		LMovie.setBounds(20,125,300,20);
 		LClass.setBounds(20,170,300,20);
 		LBookingDate.setBounds(20,215,300,20);
 		LPrice.setBounds(20,260,300,20);
@@ -64,8 +69,8 @@ public class PrintTicket1 extends JFrame
 
 
 		Panel2.add(LTitle);
-		Panel2.add(LFrom);
-		Panel2.add(LTo);
+		Panel2.add(LHall);
+		Panel2.add(LMovie);
 		Panel2.add(LClass);
 		Panel2.add(LBookingDate);
 		Panel2.add(LAdult);
